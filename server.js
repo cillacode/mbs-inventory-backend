@@ -7,7 +7,10 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 // ✅ Middleware
-app.use(cors()); // Enable CORS
+app.use(cors({
+  origin: 'https://mbamsliving-inventory.netlify.app'  // <-- replace with your real Netlify URL
+}))
+// app.use(cors()); 
 app.use(express.json()); // Parse incoming JSON
 
 // ✅ PostgreSQL connection setup
