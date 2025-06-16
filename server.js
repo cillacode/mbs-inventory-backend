@@ -6,6 +6,10 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 5000;
 
+app.get('/', (req, res) => {
+  res.send('MBS Inventory API is running ✅');
+});
+
 // ✅ Middleware
 app.use(cors({
   origin: 'https://mbamsliving-inventory.netlify.app'  // <-- replace with your real Netlify URL
